@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../styles/Products.css'
-// import { useSelector } from 'react-redux';
+
 const Products = () => {
     const [getprodcts, setproducts] = React.useState([]);
-//   const user = useSelector(state => state.auth.userData);
   React.useEffect(() => {
     fetch(`http://localhost:8080/products`)
       .then((res) => res.json())

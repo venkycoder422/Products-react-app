@@ -7,16 +7,19 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
+import { useDispatch } from 'react-redux';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
+import { login } from '../redux/actions';
 const theme = createTheme();
 
 
 export default function SignIn() {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [userData, setUserData] = useState()
     const handleSubmit = (event) => {
@@ -26,7 +29,7 @@ export default function SignIn() {
             email: data.get('email'),
             password: data.get('password'),
         });
-
+        dispatch(login(true));
         navigate("/")
     };
 
