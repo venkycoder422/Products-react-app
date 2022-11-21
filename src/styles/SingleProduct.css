@@ -1,0 +1,11 @@
+.single_product{
+    margin:2% 10% 0% 10%;
+    background-color: rgb(220, 240, 234);
+    text-align: center;
+
+}
+
+.single_product img{
+    width:25%;
+    border-radius: 10px;
+}

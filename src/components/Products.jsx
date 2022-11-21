@@ -15,6 +15,10 @@ const Products = () => {
   }, []);
   console.log("Prodcuts", getprodcts);
   
+
+  const addTOcart=()=>{
+
+  }
     
 
   return (
@@ -30,7 +34,7 @@ const Products = () => {
               <span>RS {data.price}</span>
               <div className='functional_buttons'>
                 <Link to={`/product/${data.id}`}><button>More Details</button></Link>
-                <Link to={`/cart`}><button>add to Cart</button></Link>
+                <Link to={`/cart`}><button onClick={addTOcart()}>add to Cart</button></Link>
               </div>
               
             </div>
