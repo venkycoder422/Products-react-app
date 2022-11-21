@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate  } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,10 +14,10 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 const theme = createTheme();
-import { Navigate } from 'react-router-dom';
+
 
 export default function SignIn() {
-    const navigate = Navigate();
+    const navigate = useNavigate();
     const [userData, setUserData] = useState()
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -26,7 +27,7 @@ export default function SignIn() {
             password: data.get('password'),
         });
 
-        navigate("/home")
+        navigate("/")
     };
 
     console.log(userData);
