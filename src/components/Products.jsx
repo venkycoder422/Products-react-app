@@ -16,8 +16,14 @@ const Products = () => {
   console.log("Prodcuts", getprodcts);
   
 
-  const addTOcart=()=>{
+  const addTOcart=(data)=>{
+    fetch('http://localhost:8080/cart/', { 
 
+    method: 'POST',
+    mode: 'cors', 
+    body: JSON.stringify(data) 
+
+  })
   }
     
 
@@ -34,7 +40,7 @@ const Products = () => {
               <span>RS {data.price}</span>
               <div className='functional_buttons'>
                 <Link to={`/product/${data.id}`}><button>More Details</button></Link>
-                <Link to={`/cart`}><button onClick={addTOcart()}>add to Cart</button></Link>
+                <Link to={`/cart`}><button onClick={addTOcart(data)}>add to Cart</button></Link>
               </div>
               
             </div>
